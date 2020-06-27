@@ -36,16 +36,18 @@ class Templates extends PluginBase implements CKEditorPluginInterface, CKEditorP
    * Implements \Drupal\ckeditor\Plugin\CKEditorPluginInterface::getFile().
    */
   function getFile() {
-    return drupal_get_path('module', 'yukare_ckeditor') . '/plugins/templates/plugin.js';
+    $path = 'libraries/templates';
+    return $path . '/plugin.js';
   }
   /**
    * Implements \Drupal\ckeditor\Plugin\CKEditorPluginButtonsInterface::getButtons().
    */
   function getButtons() {
+    $path = 'libraries/templates';
     return array(
       'Templates' => array(
         'label' => t('Templates'),
-        'image' => drupal_get_path('module', 'yukare_ckeditor') . '/plugins/templates/icons/templates.png',
+        'image' => $path . '/icons/templates.png',
       )
     );
   }

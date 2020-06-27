@@ -29,7 +29,7 @@ function yukare_ckeditor_help($route_name, RouteMatchInterface $route_match) {
 function yukare_ckeditor_editor_js_settings_alter(array &$settings) {
   foreach (array_keys($settings['editor']['formats']) as $text_format_id) {
     if ($settings['editor']['formats'][$text_format_id]['editor'] === 'ckeditor') {
-      $settings['editor']['formats'][$text_format_id]['editorSettings']['skin'] = 'moono_blue,/modules/custom/yukare_ckeditor/plugins/moono_blue/';
+      $settings['editor']['formats'][$text_format_id]['editorSettings']['skin'] = 'moono_blue,/libraries/moono_blue/';
       $settings['editor']['formats'][$text_format_id]['editorSettings']['format_tags'] = 'p;h1;h2;h3;h4;h5;h6;pre;address;div';
     }
   }
