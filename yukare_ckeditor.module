@@ -1,0 +1,36 @@
+<?php
+
+/**
+ * @file
+ * Contains yukare_ckeditor.module..
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function yukare_ckeditor_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the yukare_ckeditor module.
+    case 'help.page.yukare_ckeditor':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Módulo com as personalizações para o ckeditor.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_editor_js_settings_alter().
+ */
+function yukare_ckeditor_editor_js_settings_alter(array &$settings) {
+  foreach (array_keys($settings['editor']['formats']) as $text_format_id) {
+    if ($settings['editor']['formats'][$text_format_id]['editor'] === 'ckeditor') {
+      $settings['editor']['formats'][$text_format_id]['editorSettings']['skin'] = 'moono_blue,/modules/custom/yukare_ckeditor/plugins/moono_blue/';
+      $settings['editor']['formats'][$text_format_id]['editorSettings']['format_tags'] = 'p;h1;h2;h3;h4;h5;h6;pre;address;div';
+    }
+  }
+}

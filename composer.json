@@ -1,0 +1,14 @@
+{
+  "name": "drupal/yukare_ckeditor",
+  "type": "drupal-module",
+  "description": "Módulo com as personalizações para o ckeditor.",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/yukare_ckeditor",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/yukare_ckeditor",
+    "source": "http://cgit.drupalcode.org/yukare_ckeditor"
+  },
+  "require": { }
+}
